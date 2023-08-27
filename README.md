@@ -29,6 +29,8 @@ degrade_dataset(df, noise_factor=0.1, categorical_replace_prob=0.1, numerical_re
 - `categorical_replace_prob`: float (default: 0.1) - The probability of replacing values in categorical columns.
 - `numerical_replace_prob`: float (default: 0.1) - The probability of replacing values in numerical columns.
 - `string_replace_prob`: float (default: 0.1) - The probability of replacing values in string columns.
+- `date_replace_prob`: float (default: 0.1) - The probability of replacing values in date columns to future date or later dates.
+- `exclude_columns`: column not included in degrading. 
 
 ### Example Usage
 
@@ -44,9 +46,11 @@ from data_degradation import degrade_dataset
 noise_factor = 0.1
 categorical_replace_prob = 0.1
 numerical_replace_prob = 0.1
+date_replace_prob = 0.1
 string_replace_prob = 0.1
+exclude_columns =[]
 
-degraded_df = degrade_dataset(original_df, noise_factor, categorical_replace_prob, numerical_replace_prob, string_replace_prob)
+degraded_df = degrade_dataset(original_df, noise_factor, categorical_replace_prob, numerical_replace_prob, string_replace_prob,date_replace_prob,exclude_columns)
 
 print("Original DataFrame:")
 print(original_df)
