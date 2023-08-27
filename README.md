@@ -21,7 +21,8 @@ from data_degradation import degrade_dataset
 The function `degrade_dataset` accepts the following parameters:
 
 ```python
-degrade_dataset(df, noise_factor=0.1, categorical_replace_prob=0.1, numerical_replace_prob=0.1, string_replace_prob=0.1)
+exclude_columns = ['exclude_columns']
+degrade_dataset(df, noise_factor=0.1, categorical_replace_prob=0.1, numerical_replace_prob=0.1, string_replace_prob=0.1,date_replace_prob=0.1,exclude_columns)
 ```
 
 - `df`: Pandas DataFrame - The input dataset to be degraded.
